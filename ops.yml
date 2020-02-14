@@ -1,0 +1,27 @@
+# for more info visit https://cto.ai/docs/ops-reference
+version: "1"
+commands:
+  - name: interaction-test:0.1.2
+    public: false
+    description: A program that lets you test some sdk interactions.
+    run: node /ops/index.js
+    remote: true
+    sdk: "2"
+    sourceCodeURL: "https://github.com/thdaraujo/interaction-test-op.git"
+    env:
+      - "MY_ENV_VAR=$MY_ENV_VAR"
+      - "MY_ACCESS_TOKEN=$MY_ACCESS_TOKEN"
+    mountCwd: false
+    mountHome: false
+    bind:
+      - "/tmp:/tmp"
+    port:
+      - 3000:3000
+    help:
+      usage: "Your first hello-world op"
+      arguments:
+        username: "Your username"
+        email: "Your email"
+      options:
+        build: "Build flag"
+        clear: "Clears"
