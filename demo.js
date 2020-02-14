@@ -30,23 +30,23 @@ const main = async () => {
     'EXIT':         null,
   }
 
-  while(true){
+  // while(true){
     const { choice } = await ux.prompt({
       type: 'list',
       name: 'choice',
-      message: `\nChoose an interaction to test`,
+      message: "Choose an interaction to test",
       choices: Object.keys(options),
       default: "EXIT"
     })
 
     if(choice == "EXIT"){
       await ux.print("kthxbye!")
-      break;
+      return;
     }
 
     var result = await ux.prompt(options[choice])
     await ux.print("prompt returned this value -> " + JSON.stringify(result))
-  }
+  // }
 
 }
 
