@@ -14,6 +14,8 @@ const {
 
 const main = async () => {
 
+  await ux.print("This OP was built to let us manually test some sdk interactions.")
+
   const options = {
     'input':        inputPrompt,
     'number':       numberPrompt,
